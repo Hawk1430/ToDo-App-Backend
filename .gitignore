@@ -1,14 +1,56 @@
-# Node modules
+# Dependencies
 node_modules/
-node_modules
-dist
-dist-ssr
-*.local
-# Environment variables
-.env
+
+# Build output
+dist/
+dist-ssr/
+build/
+out/
+
+# Framework caches
+.vite/
+.vite/deps/
+.cache/
+.next/
+.nuxt/
+.output/
+.svelte-kit/
 
 # Logs
+logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# OS files
+# Coverage
+coverage/
+.nyc_output/
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.*.local
+!.env.example
+
+# Editor/OS
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
 .DS_Store
+Thumbs.db
+nohup.out
+
+# Package managers
+.pnp.*
+.npmrc
+.yarnrc
+
+# Misc tool artifacts
+vite.config.ts.timestamp-*
+vite.config.js.timestamp-*
