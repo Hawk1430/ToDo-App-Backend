@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const fs = require("fs").promises;
 const mongoose = require("mongoose");
@@ -11,7 +12,7 @@ const app = express();
 //Connect to Mongo DB
 mongoose
 	.connect(
-		"mongodb+srv://pr2125116_db_user:9zyCaPz2CZt4p491@cluster0.wprtdb1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+		process.env.MONGO_URL
 	)
 	.then((res) => console.log("Successfully connected to Mongo DB"))
 	.catch((err) => console.log("Error in connecting to Mongo DB: ", err));
@@ -253,6 +254,6 @@ app.use((err, req, res, next) => {
 });
 
 // --- Start Server ---
-app.listen(3000, () => {
+app.listen(process.env.PORT , () => {
 	console.log("Listening to port 3000");
 });
